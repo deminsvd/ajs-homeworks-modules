@@ -14,10 +14,17 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        static: {
+          directory: path.join(__dirname, './dist'),
+        },
+        compress: true,
+        port: 8080,
+      },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'main.html'
+            template: './src/index.html'
+            //filename: 'index.html'
         }),
         new MiniCSSExtractPlugin()
     ],
